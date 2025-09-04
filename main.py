@@ -1,4 +1,4 @@
-from LegacyProject.operations import Operations
+from operations import Operations
 
 def printMenu():
     print("--------------------------------")
