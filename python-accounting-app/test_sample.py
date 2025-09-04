@@ -43,30 +43,5 @@ class TestOperations(unittest.TestCase):
         result = self.ops.process_transaction('BALANCE')
         self.assertEqual(result, "Current balance: 1050")
 
-
-test = TestOperations(unittest.TestCase)
-test.setUp()
-
-def test_view_current_balance():
-    test.test_view_current_balance()
-
-def test_credit_account_valid_amount():
-    test.test_credit_account_valid_amount()
-
-def test_credit_account_zero_amount():
-    test.test_credit_account_zero_amount()
-
-def test_debit_account_valid_amount():
-    test.test_debit_account_valid_amount()
-
-def test_debit_account_amount_greater_than_balance():
-    test.test_debit_account_amount_greater_than_balance()
-    
-def test_debit_account_zero_amount():
-    test.test_debit_account_zero_amount()
-
-def test_invalid_operation_type():
-    test.test_invalid_operation_type()
-
-def test_integration_credit_and_debit():
-    test.test_integration_credit_and_debit()
+if __name__ == "__main__":
+    unittest.main()
