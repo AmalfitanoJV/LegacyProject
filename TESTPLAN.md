@@ -31,9 +31,24 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 1
+Current balance: 1000
+
 **Status (Pass/Fail):** 
 
+Pass
+
 **Comments:** 
+
+Changing the print from 001000.0 to 1000
+Better way to view for the user
 
 ---
 
@@ -53,7 +68,20 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 2
+Enter credit amount: 100
+Credited 100.0. New balance: 1100.0
+
 **Status (Pass/Fail):** 
+
+Pass
 
 **Comments:** 
 
@@ -75,7 +103,20 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 2
+Enter credit amount: 0.00
+Credited 0.0. New balance: 1100.0
+
 **Status (Pass/Fail):** 
+
+Pass
 
 **Comments:** 
 
@@ -97,7 +138,20 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 3
+Enter debit amount: 50.00
+Debited 50.0. New balance: 1050.0
+
 **Status (Pass/Fail):** 
+
+Pass
 
 **Comments:** 
 
@@ -119,7 +173,21 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 3
+Enter debit amount: 2000.00
+Insufficient funds
+--------------------------------
+
 **Status (Pass/Fail):** 
+
+Pass
 
 **Comments:** 
 
@@ -141,7 +209,20 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 3
+Enter debit amount: 0
+Debited 0.0. New balance: 1050.0
+
 **Status (Pass/Fail):** 
+
+Pass
 
 **Comments:** 
 
@@ -162,7 +243,19 @@ This test plan outlines the business logic and scenarios that need to be validat
 
 **Actual Result:** 
 
+--------------------------------
+Account Management System
+1. View Balance
+2. Credit Account
+3. Debit Account
+4. Exit
+--------------------------------
+Select an option (1-4): 4
+Exiting the system. Goodbye!
+
 **Status (Pass/Fail):** 
+
+Pass
 
 **Comments:** 
 
