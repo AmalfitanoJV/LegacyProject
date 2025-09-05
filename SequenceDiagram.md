@@ -1,10 +1,11 @@
 ```mermaid
 sequenceDiagram
+sequenceDiagram
     participant User
     participant Main
-    participant AccountManager
     participant OperationFactory
     participant Operation
+    participant AccountManager
     participant AccountData
 
     User->>Main: Start app (python src/main.py)
@@ -18,5 +19,5 @@ sequenceDiagram
     AccountData-->>Operation: Return balance / update balance
     Operation->>User: Print result (balance, credited, debited, error)
     User->>Main: Select next option or exit
-    Main->>User: Print exit message (if chosen)
+    Main->>User: Print exit
 ```

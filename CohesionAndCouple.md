@@ -1,22 +1,23 @@
 ```mermaid
 graph TD
-    Main["Main Module"]
-    AccountManager["AccountManager Module"]
-    OperationFactory["OperationFactory Module"]
-    Operation["Operation Module"]
-    AccountData["AccountData Module"]
+    subgraph High Cohesion
+        data[data.py<br/>AccountData]
+        operation[operation.py<br/>Operation classes]
+        main[main.py<br/>Main logic]
+    end
 
-    %% Cohesion (internal relationships)
-    AccountManager -->|uses| AccountData
-    Operation -->|uses| AccountData
+    main --> operation
+    main --> data
+    operation --> data
 
-    %% Coupling (dependencies between modules)
-    Main -->|calls| AccountManager
-    Main -->|calls| OperationFactory
-    OperationFactory -->|creates| Operation
-    AccountManager -->|executes| Operation
+    %% Coupling notes
+    classDef highCohesion fill:#e0ffe0,stroke:#333,stroke-width:2px;
+    class data,operation,main highCohesion;
 
-    %% User interaction
-    User["User"]
-    User -->|interacts| Main
+    %% Cohesion/coupling explanation
+    %% - main.py coordinates app flow (moderate cohesion)
+    %% - operation.py encapsulates transaction logic (high cohesion)
+    %% - data.py manages account state (high cohesion)
+    %% - main.py is coupled to operation.py and data.py
+    %% - operation.py is coupled to data.py
 ```
