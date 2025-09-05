@@ -1,23 +1,34 @@
 ```mermaid
 graph TD
-    subgraph High Cohesion
-        data[data.py<br/>AccountData]
-        operation[operation.py<br/>Operation classes]
-        main[main.py<br/>Main logic]
+    subgraph main.py
+        Main[Main Application]
+        Menu[Menu Logic]
     end
 
-    main --> operation
-    main --> data
-    operation --> data
+    subgraph operation.py
+        Operation[Operation (Base)]
+        Deposit[Deposit]
+        Withdraw[Withdraw]
+        OperationFactory[OperationFactory]
+    end
 
-    %% Coupling notes
-    classDef highCohesion fill:#e0ffe0,stroke:#333,stroke-width:2px;
-    class data,operation,main highCohesion;
+    subgraph data.py
+        AccountData[AccountData]
+    end
 
-    %% Cohesion/coupling explanation
-    %% - main.py coordinates app flow (moderate cohesion)
-    %% - operation.py encapsulates transaction logic (high cohesion)
-    %% - data.py manages account state (high cohesion)
-    %% - main.py is coupled to operation.py and data.py
-    %% - operation.py is coupled to data.py
+    %% Coupling arrows
+    Main --> OperationFactory
+    Main --> AccountData
+    OperationFactory --> Deposit
+    OperationFactory --> Withdraw
+    Deposit --> AccountData
+    Withdraw --> AccountData
+
+    %% Cohesion notes
+    classDef mainCohesion fill:#e0ffe0,stroke:#333,stroke-width:2px;
+    classDef opCohesion fill:#e0f7ff,stroke:#333,stroke-width:2px;
+    classDef dataCohesion fill:#fffbe0,stroke:#333,stroke-width:2px;
+    class Main,Menu mainCohesion;
+    class Operation,Deposit,Withdraw,OperationFactory opCohesion;
+    class AccountData dataCohesion;
 ```
