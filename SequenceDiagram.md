@@ -1,6 +1,5 @@
 ```mermaid
 sequenceDiagram
-sequenceDiagram
     participant User
     participant Main
     participant OperationFactory
